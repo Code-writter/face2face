@@ -23,7 +23,7 @@ export default defineSchema({
 
     comments : defineTable({
         content : v.string(),
-        ratings : v.number(),
+        rating : v.number(),
         interviewerId : v.string(),
         interviewId : v.id("interviews")
     }).index("by_interview_id", ["interviewId"])
