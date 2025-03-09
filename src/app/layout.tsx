@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import '@stream-io/video-react-sdk/dist/css/styles.css'
 import "./globals.css";
-import {ClerkProvider} from '@clerk/nextjs'
 import ConvexClerkProvider from "@/components/providers/Convex-clerk-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
             </div>
             
           </ThemeProvider>
+          <Toaster />
       </body>
     </html>
     </ConvexClerkProvider>

@@ -8,18 +8,20 @@ import { streamTokenProvider } from "../../actions/stream-actions";
 
 const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
   const [streamVideoClient, setStreamVideoClient] = useState<StreamVideoClient>();
+  // User Form clerk
   const { user, isLoaded } = useUser();
 
   useEffect(() => {
     if (!isLoaded || !user) return;
 
     const client = new StreamVideoClient({
-      apiKey: process.env.NEXT_PUBLIC_STREAM_API_KEY!,
+      apiKey: process.env.NEXT_PUBLIC_STRAM_API_KEY!,
       user: {
         id: user?.id,
         name: user?.firstName || "" + " " + user?.lastName || "" || user?.id,
         image: user?.imageUrl,
       },
+      // Token Provider  
       tokenProvider: streamTokenProvider,
     });
 
