@@ -3,6 +3,7 @@ import { ModeToggle } from "./ModeToggle";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Dashboard from "./Dashboard";
+import NormalDashboard from "./NormalDashboard";
 
 export default function Navbar(){
     return(
